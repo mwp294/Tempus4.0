@@ -22,7 +22,7 @@ namespace Tempus4._0.Models
     
         public int jobID { get; set; }
         public string Title { get; set; }
-        public Nullable<int> Hours { get; set; }
+        public int Hours { get; set; }
         public string Shift { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

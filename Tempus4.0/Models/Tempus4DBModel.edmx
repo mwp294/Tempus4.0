@@ -37,9 +37,9 @@
             <PropertyRef Name="jobID" />
           </Key>
           <Property Name="jobID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" MaxLength="50" />
-          <Property Name="Hours" Type="int" />
-          <Property Name="Shift" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Hours" Type="int" Nullable="false" />
+          <Property Name="Shift" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_dbo_Availability_dbo_Administrators_AdministratorsID">
           <End Role="Administrators" Type="Self.Administrators" Multiplicity="0..1">
@@ -133,10 +133,10 @@
             <PropertyRef Name="jobID" />
           </Key>
           <Property Name="jobID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Hours" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Hours" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Availabilities" Relationship="Self.FK_dbo_Availability_dbo_Job_JobID" FromRole="Job" ToRole="Availability" />
-          <Property Name="Shift" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Shift" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <Association Name="FK_dbo_Availability_dbo_Employee_EmployeeID">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1">

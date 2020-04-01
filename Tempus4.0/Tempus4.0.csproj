@@ -194,6 +194,8 @@
       <DependentUpon>Tempus4DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MetaClasses\EmployeeMetaData.cs" />
+    <Compile Include="Models\MetaClasses\JobsMetaData.cs" />
     <Compile Include="Models\Tempus4DBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
