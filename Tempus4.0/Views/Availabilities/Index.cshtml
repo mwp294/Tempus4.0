@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Tempus4._0.Models.Availability>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Availability</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Job.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Administrator.First_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Job.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Administrator.First_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AvailabilityID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AvailabilityID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AvailabilityID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,73 @@
+﻿@model Tempus4._0.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HireDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HireDate)
+        </dd>
+
+    </dl>
+
+    <table class="table table-condensed table-responsive">
+        <tr>
+            <th>Job Title</th>
+            <th>Hours</th>
+            <th>Date</th>
+        </tr>
+        @foreach(var availability in Model.Availabilities)
+        {
+            <tr>
+                <td>
+                    <p>
+                        @availability.Job.Title
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        @availability.Job.Hours
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        @availability.Date
+
+                    </p>
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

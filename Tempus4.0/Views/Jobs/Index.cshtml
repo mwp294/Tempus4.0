@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Tempus4._0.Models.Job>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Jobs</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shift)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Hours)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Shift)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.jobID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.jobID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.jobID })
+    </td>
+</tr>
+}
+
+</table>
