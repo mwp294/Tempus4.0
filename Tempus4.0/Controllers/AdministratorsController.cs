@@ -11,6 +11,7 @@ using Tempus4._0.Models;
 
 namespace Tempus4._0.Controllers
 {
+    [Authorize]
     public class AdministratorsController : Controller
     {
         private Tempus2_DBEntities db = new Tempus2_DBEntities();
