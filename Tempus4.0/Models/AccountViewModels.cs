@@ -37,6 +37,10 @@ namespace Tempus4._0.Models
         public bool RememberBrowser { get; set; }
 
         public bool RememberMe { get; set; }
+        
+        [Display(Name = "Username")]
+        public string Username { get; set; }
+
     }
 
     public class ForgotViewModel
@@ -60,6 +64,7 @@ namespace Tempus4._0.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+       
     }
 
     public class RegisterViewModel
@@ -79,6 +84,16 @@ namespace Tempus4._0.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name="Username(must be same as email)")]
+
+        public string Username { get; set; }
+
+        [Required]
+        [Display(Name="User Role")]
+
+        public string UserRole { get; set; }
     }
 
     public class ResetPasswordViewModel

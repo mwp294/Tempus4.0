@@ -10,6 +10,8 @@ using Tempus4._0.Models;
 
 namespace Tempus4._0.Controllers
 {
+    [Authorize(Roles="Supervisor")]
+    
     public class JobsController : Controller
     {
         private Tempus2_DBEntities db = new Tempus2_DBEntities();
